@@ -5,7 +5,7 @@
   --bg-dark: #c8d2dc;
   --bg-card: #e0dbdb;
   --text-primary: #111827;
-  --text-secondary: #6B7280;
+  --text-secondary: #6b7280;
 
   --accent-primary: #3b82f6; /* Blue */
   --accent-secondary: #8b5cf6; /* Purple */
@@ -203,7 +203,7 @@ nav a:hover {
   width: 175%;
   height: 175%;
   border-radius: 50%;
-  object-fit:cover;
+  object-fit: cover;
   border: 1px solid var(--bg-dark);
   margin-bottom: 100px;
 }
@@ -229,6 +229,7 @@ nav a:hover {
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 20px;
+  margin-top: 10px;
   border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
@@ -251,6 +252,9 @@ nav a:hover {
   color: transparent;
 }
 
+.hero-content {
+  margin-top: 200px;
+}
 .hero p {
   color: var(--text-secondary);
   font-size: 1.2rem;
@@ -282,11 +286,6 @@ nav a:hover {
   color: var(--bg-dark);
 }
 
-.btn.primary:hover {
-  background: #ccc;
-  transform: translateY(-2px);
-}
-
 .btn.secondary {
   background: rgba(255, 255, 255, 0.05);
   color: var(--text-primary);
@@ -294,9 +293,9 @@ nav a:hover {
 }
 
 .btn.secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.82);
+  color: var(--bg-card);
 }
-
 
 /* Generic Section Styles */
 section {
@@ -447,7 +446,6 @@ section {
   display: flex;
   flex-direction: column;
   gap: 20px;
-
 }
 
 .contact-info a {
@@ -462,7 +460,7 @@ section {
 
 .contact-info a:hover {
   background-color: var(--text-primary);
-  color: var(--bg-card)
+  color: var(--bg-card);
 }
 
 .contact-desc {
@@ -534,34 +532,75 @@ footer i {
 }
 
 /* Responsive */
+/* Responsive Design System */
+
+/* Large Tablets & Laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .container {
+    padding: 0 40px;
+  }
+}
+
+/* Tablets (max-width: 768px) */
 @media (max-width: 768px) {
+  /* Fix vertical overflow by removing strict vertical centering */
+  .hero {
+    min-height: auto; /* Remove 100vh constraint so it can scroll naturally */
+    height: auto;
+    padding-top: 150px; /* Ensure content starts below the fixed header */
+    padding-bottom: 50px;
+    align-items: flex-start; /* Do not try to vertically center content */
+  }
+
   .hero h1 {
     font-size: 2.5rem;
+    line-height: 1.2;
   }
 
   header {
-    padding: 15px 20px;
+    padding: 10px 20px; /* Compress header slightly */
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Make navigation wrap nicely without taking too much vertical space */
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
   }
 
   .nav-btn {
-    display: none;
+    display: none; /* Hide 'Let's Talk' button on tablets/mobile */
   }
 
   .contact-layout {
     flex-direction: column;
-    gap: 30px;
-  }
-
-  /* Stack Hero on Mobile */
-  .hero-container {
-    flex-direction: column-reverse; /* Image on top? or text on top? Standard is text top or image top. Let's do Text First for content mostly, but actually Image first looks nice on profiles. Let's try normal column first (Text, then Image) or reverse. Actually image is usually top on mobile. */
-    flex-direction: column;
-    text-align: center;
     gap: 40px;
   }
 
-  .hero-content {
+  /* Stack Hero Section Content */
+  .hero-container {
+    flex-direction: column;
     text-align: center;
+    gap: 30px;
+    padding-top: 0; /* Removing inner padding as outer .hero handles it */
+  }
+
+  /* Reset margin for mobile/tablet */
+  .hero-content {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .hero p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
   }
 
   .cta-group {
@@ -571,10 +610,65 @@ footer i {
   .image-wrapper {
     width: 280px;
     height: 280px;
+    margin: 0 auto; /* Ensure image is centered */
   }
 }
 
-/* --- Scroll Reveal Animation Classes --- */
+/* Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .hero {
+    padding-top: 130px; /* Slightly less padding needed as header collapses more */
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* Stack Helper Buttons vertically */
+  .cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .image-wrapper {
+    width: 194px;
+    height: 195px;
+    margin-right: 126px;
+  }
+
+  .card-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+    margin-bottom: 30px;
+  }
+}
+
 /* --- Scroll Reveal Animation Classes --- */
 
 /* Initial state: element is hidden and moved down slightly */
