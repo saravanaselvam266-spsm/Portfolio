@@ -1,10 +1,6 @@
 // Wait for the DOM to fully load before running scripts
 document.addEventListener("DOMContentLoaded", () => {
-  // --- 1. Typewriter Effect Removed ---
-  // (User requested removal)
-
-
-  // --- 2. Smooth Scrolling for Navigation Links ---
+  // --- Smooth Scrolling for Navigation Links ---
   document.querySelectorAll('nav a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -19,23 +15,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- 3. Scroll Reveal Animation ---
-  const revealElements = document.querySelectorAll(
-    ".card, .skill-box, .about-card, section h2"
-  );
+  // --- Scroll Reveal Animation ---
+  const revealElements = document.querySelectorAll(".reveal");
 
   const revealOnScroll = () => {
     const windowHeight = window.innerHeight;
-    const elementVisible = 150; // How much of the element needs to be visible
+    const elementVisible = 100; // Trigger slightly earlier
 
     revealElements.forEach((element) => {
       const elementTop = element.getBoundingClientRect().top;
 
       if (elementTop < windowHeight - elementVisible) {
         element.classList.add("active");
-      } else {
-        element.classList.remove("active");
       }
+      // Optional: Remove else block if you want elements to stay visible once revealed
+      // else {
+      //   element.classList.remove("active");
+      // }
     });
   };
 

@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap");
 
 :root {
-  /* Teal & Mint Theme - Fresh, Modern, Professional */
-  --bg-dark: #ffffff; /* Pure White Background */
-  --bg-card: #f0fdfa; /* Azure/Mint Tint (Teal 50) */
-  --text-primary: #134e4a; /* Deep Teal (Teal 900) */
-  --text-secondary: #475569; /* Slate Gray */
+  /* Teal & Mint Theme - Refined for Professionalism */
+  --bg-body: #f8fafc; /* Very light slate for depth */
+  --bg-card: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.8);
+
+  --text-primary: #0f172a; /* Slate 900 - Sharp and clear */
+  --text-secondary: #475569; /* Slate 600 - Readable */
+  --text-light: #94a3b8;
 
   --accent-primary: #0d9488; /* Teal (Brand Color) */
   --accent-secondary: #99f6e4; /* Mint (Highlight) */
@@ -446,7 +449,15 @@ section {
   align-items: center;
   gap: 15px;
   position: relative;
+  transition: 0.5s;
+  
 }
+
+.skill-circle:hover {
+  transform: translateY(-20px);
+  
+}
+
 
 /* The Segmented Circular Progress */
 .circular-progress {
@@ -517,6 +528,8 @@ section {
   gap: 6px;
 }
 
+
+
 /* Life Skills Grid */
 .lsrw-grid {
   display: grid;
@@ -526,7 +539,7 @@ section {
   margin-top: 30px;
 }
 
-.lsrw-card {
+.lsrw-card-fade-in-up {
   background: var(--bg-card);
   border: 1px solid rgba(13, 148, 136, 0.1);
   border-radius: var(--radius);
@@ -538,13 +551,25 @@ section {
   align-items: center;
   gap: 15px;
   box-shadow: 0 4px 6px rgba(13, 148, 136, 0.05);
+
 }
 
-.lsrw-card:hover {
+.lsrw-card-fade-in-up:hover {
   transform: translateY(-5px);
   border-color: var(--accent-primary);
   box-shadow: 0 10px 20px rgba(13, 148, 136, 0.15);
+  
+
 }
+
+
+.lsrw-card-fade-in-up:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 10px 20px rgba(13, 148, 136, 0.15);
+  transform: translateY(-20px);
+  transition: 0.5s;
+}
+
 
 .lsrw-icon {
   width: 60px;
@@ -597,7 +622,8 @@ section {
 .card:hover {
   transform: translateY(-5px);
   border-color: var(--accent-primary);
-  box-shadow: 0 10px 15px -3px rgba(13, 148, 136, 0.1),
+  box-shadow:
+    0 10px 15px -3px rgba(13, 148, 136, 0.1),
     0 4px 6px -2px rgba(13, 148, 136, 0.05);
 }
 
@@ -624,7 +650,8 @@ section {
 .card:hover {
   transform: translateY(-10px) scale(1.02);
   border-color: var(--accent-primary);
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5),
+  box-shadow:
+    0 20px 40px -10px rgba(0, 0, 0, 0.5),
     0 0 20px rgba(178, 162, 142, 0.2);
 }
 
