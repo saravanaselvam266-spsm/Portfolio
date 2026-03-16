@@ -419,15 +419,6 @@ section {
   font-size: 1.2rem;
 }
 
-/* Circular Skills Grid */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 40px 20px;
-  justify-items: center;
-  align-items: start;
-}
-
 .skill-category {
   margin-bottom: 60px;
   text-align: center;
@@ -441,91 +432,6 @@ section {
   align-items: center;
   justify-content: center;
   gap: 10px;
-}
-
-.skill-circle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  position: relative;
-  transition: 0.5s;
-  
-}
-
-.skill-circle:hover {
-  transform: translateY(-20px);
-  
-}
-
-
-/* The Segmented Circular Progress */
-.circular-progress {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  position: relative;
-  /* The Main Chart Gradient (Progress vs Empty) */
-  background: conic-gradient(var(--accent-primary) var(--percent), #e5e7eb 0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* 1. The Gaps (Painted over the gradient) */
-.circular-progress::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: repeating-conic-gradient(
-    var(--bg-card) 0 4deg,
-    /* Gap width */ transparent 4deg 12deg /* Segment width */
-  );
-  z-index: 1;
-}
-
-/* 2. The Inner Hole (Creates Donut) */
-.circular-progress::after {
-  content: "";
-  position: absolute;
-  width: 100px; /* Controls thickness of ring */
-  height: 100px;
-  background: var(--bg-card);
-  border-radius: 50%;
-  z-index: 2;
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05); /* Inner Depth */
-}
-
-/* Inner Text Container */
-.circle-content {
-  position: relative;
-  z-index: 3; /* Above the hole */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-primary);
-}
-
-.circle-content span {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 2rem; /* Larger like image */
-}
-
-.skill-name {
-  color: var(--text-secondary);
-  font-weight: 500;
-  font-size: 1rem;
-  margin-top: 5px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  gap: 6px;
 }
 
 
@@ -555,18 +461,9 @@ section {
 }
 
 .lsrw-card-fade-in-up:hover {
-  transform: translateY(-5px);
   border-color: var(--accent-primary);
   box-shadow: 0 10px 20px rgba(13, 148, 136, 0.15);
-  
-
-}
-
-
-.lsrw-card-fade-in-up:hover {
-  border-color: var(--accent-primary);
-  box-shadow: 0 10px 20px rgba(13, 148, 136, 0.15);
-  transform: translateY(-20px);
+  transform: translateY(-10px);
   transition: 0.5s;
 }
 
@@ -585,7 +482,7 @@ section {
   transition: var(--transition);
 }
 
-.lsrw-card:hover .lsrw-icon {
+.lsrw-card-fade-in-up:hover .lsrw-icon {
   transform: scale(1.1);
 }
 
