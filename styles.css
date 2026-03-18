@@ -255,7 +255,22 @@ nav a:hover {
   filter: none;
 }
 
-.badge {
+.para {
+  width: 700px;
+}
+
+.about-card {
+  display: flex;
+  gap: 50px;
+}
+
+.image {
+  width: 300px;
+  border-radius: 10px;
+
+}
+
+/* .badge {
   display: flex;
   padding: 8px 16px;
   background: transparent;
@@ -266,7 +281,7 @@ nav a:hover {
   font-family: monospace;
   margin-bottom: 20px;
   border: 1px solid var(--accent-primary);
-}
+} */
 
 .hero h1 {
   font-family: var(--font-heading);
@@ -393,6 +408,11 @@ section {
 .about-card strong {
   color: var(--accent-primary);
 }
+
+.card-content strong{
+  color: var(--accent-primary);
+}
+
 
 /* --- SKILLS SECTION --- */
 .skills-wrapper {
