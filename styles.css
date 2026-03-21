@@ -267,7 +267,12 @@ nav a:hover {
 .image {
   width: 300px;
   border-radius: 10px;
+}
 
+
+.image:hover {
+  width: 500px;
+  height: 500px;
 }
 
 /* .badge {
